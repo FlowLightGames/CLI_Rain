@@ -1,0 +1,10 @@
+[package]
+name = "cli_rain"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+crossterm = "0.27"       # for terminal control (cursor, color, clear, etc.)
+rand = "0.8"             # for randomness in rain
+rodio = "0.17"           # for playing audio
+clap = "4"  
