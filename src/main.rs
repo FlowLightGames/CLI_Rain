@@ -51,6 +51,7 @@ fn play_looping_sound(sound_data: &'static [u8], run_flag: Arc<AtomicBool>) {
 
         // Create a sink and loop the audio
         let sink = Sink::try_new(&stream_handle).expect("Failed to create audio sink");
+        sink.set_volume(0.15);
         sink.append(source.repeat_infinite());
         while run_flag.load(Ordering::SeqCst) {
             thread::sleep(std::time::Duration::from_secs(1));
